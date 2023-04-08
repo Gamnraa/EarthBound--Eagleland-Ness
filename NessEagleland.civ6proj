@@ -24,5 +24,19 @@
   <ItemGroup>
     <None Include="NessEagleland.Art.xml" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Core\Civilization.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Core\Civilization_Trait.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Core\Colors.sql">
+      <SubType>Content</SubType>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildLocalExtensionPath)Civ6.targets" />
 </Project>
