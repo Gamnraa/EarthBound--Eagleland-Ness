@@ -58,8 +58,8 @@ VALUES		('CIVILIZATION_GRAM_EAGLELAND'	'TRAIT_CIVILZATION_GRAM_ESCARGOMAN'	);
 
 
 
-INSERT INTO Units (
-				UnitType,			
+INSERT INTO Units 
+				(UnitType,			
 				Name,
 				Description,
 				TraitType,
@@ -74,4 +74,30 @@ VALUES			('UNIT_GRAM_PSYCHIC',
 				
 INSERT INTO	UnitAiInfos
 			(UnitType,				AiType			)
-VALUES		('UNIT_GRAM_PSYCHIC',	'UNITAI_MELEE'	);			
+VALUES		('UNIT_GRAM_PSYCHIC',	'UNITAI_MELEE'	);		
+
+
+
+INSERT INTO Units
+				(UnitType,
+				Name,
+				Description,
+				TraitType,
+				BaseMoves,	BaseSightRange,	ZoneOfControl,	Domain,	FormationClass,	AdvisorType,	CanCapture, 
+				CostProgressionModel,	CostProgressionParaml,	PurchaseYield,	BuildCharges)
+SELECT			'UNIT_GRAM_ESCARGOMAN',
+				'LOC_UNIT_GRAM_ESCARGOMAN_NAME',
+				'LOC_UNIT_GRAM_ESCARGOMAN_DESC',
+				'TRAIT_CIVILIZATION_GRAM_ESCARGOMAN',
+				BaseMoves,	BaseSightRange,	ZoneOfControl,	Domain,	FormationClass,	AdvisorType,	CanCapture, 
+				CostProgressionModel,	CostProgressionParaml,	PurchaseYield,	BuildCharges + 1
+FROM			Units
+WHERE			UnitType = 'UNIT_BUILDER';
+
+INSERT INTO UnitAiInfos
+			(UnitType,				AiType			)
+VALUES		('UNIT_GRAM_ESCARGOMAN','UNITAI_BUILD'	);
+
+INSERT INTO UnitReplaces
+			(CivUniqueUnitType,		ReplacesUnitType)
+VALUES		('UNIT_GRAM_ESCARGOMAN','UNIT_BUILDER'	);
