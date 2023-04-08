@@ -69,5 +69,9 @@ VALUES			('UNIT_GRAM_PSYCHIC',
 				'LOC_UNIT_GRAM_PSYCHIC_NAME',	
 				'LOC_UNIT_GRAM_PSYCHIC_DESC',
 				'TRAIT_LEADER_GRAM_PSYCHIC',
-				2,			14,		2,				'true',			'DOMAIN_LAND',	'FORMATION_CLASS_LAND_COMBAT',
-				'PROMOTION_CLASS_LAND_COMBAT',		1,				'false'											);								
+				2,			18,		2,				'true',			'DOMAIN_LAND',	'FORMATION_CLASS_LAND_COMBAT',
+				'PROMOTION_CLASS_LAND_COMBAT',		1,				'false'											);		
+				
+INSERT INTO	UnitAiInfos
+			(UnitType,				AiType			)
+VALUES		('UNIT_GRAM_PSYCHIC',	'UNITAI_MELEE'	);			
