@@ -23,9 +23,9 @@ INSERT INTO PlayerColors
 			PrimaryColor,						SecondaryColor,
 			Alt1PrimayColor,					Alt1SecondaryColor,
 			Alt2PrimayColor,					Alt2SecondaryColor,
-			Alt3PrimayColor,					Alt3SecondaryColor,					)
-VALUES		'LEADER_GRAM_NESS',					'Unique',
+			Alt3PrimayColor,					Alt3SecondaryColor					)
+VALUES		('LEADER_GRAM_NESS',					'Unique',
 			'COLOR_GRAM_EAGLELAND_A_PRIMARY',	'COLOR_GRAM_EAGLELAND_A_SECONDARY',
 			'COLOR_GRAM_EAGLELAND_B_PRIMARY',	'COLOR_GRAM_EAGLELAND_B_SECONDARY',
 			'COLOR_GRAM_EAGLELAND_C_PRIMARY',	'COLOR_GRAM_EAGLELAND_C_SECONDARY',
-			'COLOR_GRAM_EAGLELAND_D_PRIMARY',	'COLOR_GRAM_EAGLELAND_D_SECONDARY',	);
+			'COLOR_GRAM_EAGLELAND_D_PRIMARY',	'COLOR_GRAM_EAGLELAND_D_SECONDARY'	);
