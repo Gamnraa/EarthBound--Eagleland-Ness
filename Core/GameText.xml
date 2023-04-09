@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- GameText -->
+<!-- Author: Anagram -->
+<!-- DateCreated: 4/8/2023 9:59:28 PM -->
+<GameData>
+	<LocalizedText>
+		<Row Tag="LOC_CIVILIZATION_GRAM_EAGLELAND_NAME" Language="en_US">
+			<Text>Eagleland</Text>
+		</Row>
+		<Row Tag="LOC_CIVILIZATION_GRAM_EAGLELAND_DESC" Language="en_US">
+			<Text>Country of Eagleland</Text>
+		</Row>
+		<Row Tag="LOC_CIVILIZATION_GRAM_EAGLELAND_ADJ" Language="en_US">
+			<Text>Eagle</Text>
+		</Row>
+		
+		<Row Tag="LOC_NAMED_MOUNTAIN_GRAM_BEAK_POINT" Language="en_US">
+			<Text>Beak Point</Text>
+		</Row>
+		<Row Tag="LOC_NAMED_MOUNTAIN_GRAM_GIANT_STEP" Language="en_US">
+			<Text>Giant Step</Text>
+		</Row>
+		<Row Tag="LOC_NAMED_MOUNTAIN_GRAM_PINK_CLOUD" Language="en_US">
+			<Text>Pink Cloud</Text>
+		</Row>
+		<Row Tag="LOC_NAMED_MOUNTAIN_GRAM_LILLIPUT_STEPS" Language="en_US">
+			<Text>Lilliput Steps</Text>
+		</Row>
+		<Row Tag="LOC_NAMED_MOUNTAIN_GRAM_MAGNET_HILL" Language="en_US">
+			<Text>Magnet Hill</Text>
+		</Row>
+		<Row Tag="LOC_NAMED_MOUNTAIN_GRAM_LUMINE_HALL" Language="en_US">
+			<Text>Lumine Hall</Text>
+		</Row>
+
+		<Row Tag="LOC_NAMED_RIVER_GRAM_GRAPEFRUIT_FALLS" Language="en_US">
+			<Text>Grapefruit Falls</Text>
+		</Row>
+		<Row Tag="LOC_NAMED_RIVER_GRAM_PEACEFUL_REST_VALLEY" Language="en_US">
+			<Text>Peaceful Rest Valley</Text>
+		</Row>
+		<Row Tag="LOC_NAMED_RIVER_GRAM_RAINY_CIRCLE" Language="en_US">
+			<Text>Rainy Circle</Text>
+		</Row>
+
+		<Row Tag="LOC_NAMED_LAKE_GRAM_TESSIE" Language="en_US">
+			<Text>Lake Tess</Text>
+		</Row>
+		<Row Tag="LOC_NAMED_LAKE_GRAM_MILKY_WELL" Language="en_US">
+			<Text>Milky Well</Text>
+		</Row>
+		<Row Tag="LOC_NAMED_LAKE_GRAM_CALYON" Language="en_US">
+			<Text>Ca'Lyon Beach</Text>
+		</Row>
+
+		<Row Tag="LOC_NAMED_DESERT_GRAM_DUSTY_DUNES" Language="en_US">
+			<Text>Dusty Dunes Desert</Text>
+		</Row>
+		<Row Tag="LOC_NAMED_DESERT_GRAM_SCARABA" Language="en_US">
+			<Text>Scaraba Desert</Text>
+		</Row>
+
+		<Row Tag="LOC_NAMED_VOLCANO_FIRE_SPRING" Language="en_US">
+			<Text>Fire Spring</Text>
+		</Row>
+		<Row Tag="LOC_NAMED_VOLCANO_LOST_UNDERWORLD" Language="en_US">
+			<Text>Lost Underworld</Text>
+		</Row>
+
+		<Row Tag="LOC_CITY_NAME_GRAM_EAGLELAND_1" Language="en_US">
+			<Text>Onett</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_GRAM_EAGLELAND_2" Language="en_US">
+			<Text>Twoson</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_GRAM_EAGLELAND_3" Language="en_US">
+			<Text>Threed</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_GRAM_EAGLELAND_4" Language="en_US">
+			<Text>Fourside</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_GRAM_EAGLELAND_5" Language="en_US">
+			<Text>Happy Happy Village</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_GRAM_EAGLELAND_6" Language="en_US">
+			<Text>Saturn Valley</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_GRAM_EAGLELAND_7" Language="en_US">
+			<Text>Fiveton</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_GRAM_EAGLELAND_8" Language="en_US">
+			<Text>Sixsinatti</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_GRAM_EAGLELAND_9" Language="en_US">
+			<Text>Winters</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_GRAM_EAGLELAND_10" Language="en_US">
+			<Text>Summers</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_GRAM_EAGLELAND_11" Language="en_US">
+			<Text>Toto</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_GRAM_EAGLELAND_12" Language="en_US">
+			<Text>Newport</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_GRAM_EAGLELAND_13" Language="en_US">
+			<Text>Dalaam</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_GRAM_EAGLELAND_14" Language="en_US">
+			<Text>Scaraba</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_GRAM_EAGLELAND_15" Language="en_US">
+			<Text>Tenda Village</Text>
+		</Row>
+
+		<Row Tag="LOC_CITIZEN_GRAM_EAGLELAND_MALE_1" Language="en_US">
+			<Text>Lier X. Agerate</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_GRAM_EAGLELAND_MALE_2" Language="en_US">
+			<Text>Picky</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_GRAM_EAGLELAND_MALE_3" Language="en_US">
+			<Text>Gonzares</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_GRAM_EAGLELAND_MALE_4" Language="en_US">
+			<Text>Penetella Giovanni</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_GRAM_EAGLELAND_MALE_5" Language="en_US">
+			<Text>Jeff</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_GRAM_EAGLELAND_MALE_6" Language="en_US">
+			<Text>Tony</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_GRAM_EAGLELAND_MALE_7" Language="en_US">
+			<Text>Apple Kid</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_GRAM_EAGLELAND_MALE_8" Language="en_US">
+			<Text>Orange Kid</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_GRAM_EAGLELAND_MALE_9" Language="en_US">
+			<Text>Maxwell</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_GRAM_EAGLELAND_MALE_10" Language="en_US">
+			<Text>George Montague</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_GRAM_EAGLELAND_MALE_11" Language="en_US">
+			<Text>Gerardo Montague</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_GRAM_EAGLELAND_MALE_12" Language="en_US">
+			<Text>Dr. Andonuts</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_GRAM_EAGLELAND_MALE_13" Language="en_US">
+			<Text>Mr. Saturn</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_GRAM_EAGLELAND_MALE_14" Language="en_US">
+			<Text>Mr. Carpainter</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_GRAM_EAGLELAND_MALE_15" Language="en_US">
+			<Text>Mr. Fork</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_GRAM_EAGLELAND_MALE_16" Language="en_US">
+			<Text>Mr. Spoon</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_GRAM_EAGLELAND_MALE_17" Language="en_US">
+			<Text>Runaway Five</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_GRAM_EAGLELAND_MALE_18" Language="en_US">
+			<Text>Everdred</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_GRAM_EAGLELAND_MALE_19" Language="en_US">
+			<Text>Frank</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_GRAM_EAGLELAND_MALE_20" Language="en_US">
+			<Text>Jakie</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_GRAM_EAGLELAND_MALE_21" Language="en_US">
+			<Text>Mr. Poochyfud</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_GRAM_EAGLELAND_MALE_22" Langauge="en_US">
+			<Text>Enrich Flavor</Text>
+		</Row>
+		<!--Okay I gotta move on to females at some point my lord-->
+		<Row Tag="LOC_CITIZEN_GRAM_EAGLELAND_FEMALE_1" Language="en_US">
+			<Text>Paula</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_GRAM_EAGLELAND_FEMALE_2" Language="en_US">
+			<Text>Tracy</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_GRAM_EAGLELAND_FEMALE_3" Language="en_US">
+			<Text>Lardna</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_GRAM_EAGLELAND_FEMALE_4" Language="en_US">
+			<Text>Miss Fake</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_GRAM_EAGLELAND_FEMALE_5" Language="en_US">
+			<Text>Isabella</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_GRAM_EAGLELAND_FEMALE_6" Language="en_US">
+			<Text>Venus</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_GRAM_EAGLELAND_FEMALE_7" Language="en_US">
+			<Text>Nico</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_GRAM_EAGLELAND_FEMALE_8" Language="en_US">
+			<Text>Electra</Text>
+		</Row>
+
+		<Row Tag="LOC_CIVINFO_CAPITAL" Language="en_US">
+			<Text>Capital City</Text>
+		</Row>
+		<Row Tag="LOC_CIVINFO_GRAM_EAGLELAND" Language="en_US">
+			<Text>Onett</Text>
+		</Row>
+		
+		<Row Tag="LOC_LEADER_GRAM_NESS_NAME" Language="en_US">
+			<Text>Ness</Text>
+		</Row>
+		<Row Tag="LOC_PEDIA_LEADERS_PAGE_GRAM_NESS_QUOTE" Language="en_US">
+			<Text>Fuzzy Pickles!</Text>
+		</Row>
+		<Row Tag="LOC_LOADING_INFO_LEADER_GRAM_NESS" Language="en_US">
+			<Text>Ness, Chosen Boy destined to rid Earth of all who seek to harm it. Take up the mantle, lead the mighty nation of Eagleland to true glory! Only you can seek out your Sanctuaries, and establish Eagleland as a reveled protecorate over all who need it, along with a powerful psychic order to back up such claims. Go forth, young Ness: go forth, and bring the world to a better place!</Text>
+		</Row>
+		<Row Tag="LOC_PEDIA_LEADERS_PAGE_GRAM_NESS_TITLE" Language="en_US">
+			<Text>Ness</Text>
+		</Row>
+		<Row Tag="LOC_PEDIA_LEADERS_PAGE_GRAM_NESS_SUBTITLE" Langauge="en_US">
+			<Text>The Chosen Boy</Text>
+		</Row>
+		<Row Tag="LOC_PEDIA_LEADERS_PAGE_GRAM_NESS_CHAPTER_CAPSULE_BODY" Language="en_US">
+			<Text>Ness wants to explore and discover as many Natural Wonders and City-States as possible. Building scouts and mapping out the world should be his priority.</Text>
+		</Row>
+		<Row Tag="LOC_PEDIA_LEADERS_PAGE_GRAM_NESS_CHAPTER_DETAILED_BODY" Language="en_US">
+			<Text>Finding city-states as quickly as possible should be Ness' first order of business. The sooner he can discover them, the less likely others will have established a foothold with them, and the more likely it is for his Great Eagle Sovereignity civilization ability to allow him to become Suzerain over them. Because this ability is limited to the amount of cities Eagleland owns, expansion should also be a concern for Ness: especially expanding to control Natural Wonders. Although a small boost of Diplomatic Favor and Culture from discovering Natural Wonders is always nice, Ness only reaps the full benefits of his leader ability if he is able to directly control them. Once he has a good portion of the world mapped out and a decent civilization established, he can hard focus on improving his infrastructure via Escargo Expressmen, which are cheaper to produce and come with one extra build charge compared to Builders. Drug Stores come later in the game, but are invaluable resources for keeping Eagleland growing, funded, and happy. Although Psychics can be potent, Ness will prefer to use them for upholding the peace, as he would much rather get along with everyone else, saving them for civilizations looking to cause trouble.</Text>
+		</Row>
+
+		<Row Tag="LOC_TRAIT_CIVILIZATION_GRAM_EAGLELAND_SOVREIGNITY_NAME" Language="en_US">
+			<Text>Great Eagle Sovereignity</Text>
+		</Row>
+		<Row Tag="LOC_TRAIT_CIVILIZATION_GRAM_EAGLELAND_SOVREIGNITY_DESC" Langauge="en_US">
+			<Text>If a City-State discovered by Eagleland goes 5 consecutive turns without a Suzerain, Eagleland establishes itself as its Suzerain (limited to number of cities Eagleland owns).</Text>
+		</Row>
+		<Row Tag="LOC_TRAIT_LEADER_GRAM_NESS_EARTHBOUND_NAME" Language="en_US">
+			<Text>EarthBound</Text>
+		</Row>
+		<Row Tag="LOC_TRAIT_LEADER_GRAM_NESS_EARTHBOUND_DESC" Language="en_US">
+			<Text>Receive [ICON_FAVOR] Diplomatic Favor and [ICON_Culture] Culture when discovering a Natural Wonder. +1 [ICON_FAVOR] Diplomatic Favor per turn, +3[ICON_Strength] Combat Strength to Psychics for every 8th of the world's Natural Wonders under your control.</Text>
+		</Row>
+
+		<Row Tag="LOC_UNIT_GRAM_PSYCHIC_NAME" Language="en_US">
+			<Text>Psychic</Text>
+		</Row>
+		<Row Tag="LOC_UNIT_GRAM_PSYCHIC_DESC" Language="en_US">
+			<Text>Eagleland unique unit when Ness is their leader. Fights as a melee unit that may use various powers at the start of its turn to enhance its abilities. Cannot be trained by normal means.</Text>
+		</Row>
+
+		<Row Tag="LOC_UNIT_GRAM_ESCAGROMAN_NAME" Language="en_US">
+			<Text>Escargo Expressman</Text>
+		</Row>
+		<Row Tag="LOC_UNIT_GRAM_ESCARGOMAN_DESC" Language="en_US">
+			<Text>Eagleland unique unit that replaces the builder. Cheaper to produce, and has one extra build charge.</Text>
+		</Row>
+	</LocalizedText>
+</GameData>
