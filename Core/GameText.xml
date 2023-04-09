@@ -234,6 +234,13 @@
 			<Text>Finding city-states as quickly as possible should be Ness' first order of business. The sooner he can discover them, the less likely others will have established a foothold with them, and the more likely it is for his Great Eagle Sovereignity civilization ability to allow him to become Suzerain over them. Because this ability is limited to the amount of cities Eagleland owns, expansion should also be a concern for Ness: especially expanding to control Natural Wonders. Although a small boost of Diplomatic Favor and Culture from discovering Natural Wonders is always nice, Ness only reaps the full benefits of his leader ability if he is able to directly control them. Once he has a good portion of the world mapped out and a decent civilization established, he can hard focus on improving his infrastructure via Escargo Expressmen, which are cheaper to produce and come with one extra build charge compared to Builders. Drug Stores come later in the game, but are invaluable resources for keeping Eagleland growing, funded, and happy. Although Psychics can be potent, Ness will prefer to use them for upholding the peace, as he would much rather get along with everyone else, saving them for civilizations looking to cause trouble.</Text>
 		</Row>
 
+		<Row Tag="LOC_AGENDA_GRAM_NATURALLY_FRIENDLY_NAME" Language="en_US">
+			<Text>Naturally Friendly</Text>
+		</Row>
+		<Row Tag="LOC_AGENDA_GRAM_NATURALLY_FRIENDLY_DESC" Language="en_US">
+			<Text>Ness will attempt to get along with as many civilizations as possible and befriend them. He dislikes egregious warmongers.</Text>
+		</Row>
+
 		<Row Tag="LOC_TRAIT_CIVILIZATION_GRAM_EAGLELAND_SOVREIGNITY_NAME" Language="en_US">
 			<Text>Great Eagle Sovereignity</Text>
 		</Row>
