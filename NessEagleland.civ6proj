@@ -31,10 +31,16 @@
     <Content Include="Core\Civilization.sql">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="Core\Civilization_Trait.sql">
+    <Content Include="Core\Leader.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Core\Trait.sql">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Core\Colors.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Core\Units.sql">
       <SubType>Content</SubType>
     </Content>
   </ItemGroup>
