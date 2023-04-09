@@ -84,13 +84,13 @@ INSERT INTO Units
 				Description,
 				TraitType,
 				BaseMoves,	BaseSightRange,	ZoneOfControl,	Domain,	FormationClass,	AdvisorType,	CanCapture, 
-				CostProgressionModel,	CostProgressionParaml,	PurchaseYield,	BuildCharges)
+				Cost,	CostProgressionModel,	CostProgressionParaml,	PurchaseYield,	BuildCharges)
 SELECT			'UNIT_GRAM_ESCARGOMAN',
 				'LOC_UNIT_GRAM_ESCARGOMAN_NAME',
 				'LOC_UNIT_GRAM_ESCARGOMAN_DESC',
 				'TRAIT_CIVILIZATION_GRAM_ESCARGOMAN',
 				BaseMoves,	BaseSightRange,	ZoneOfControl,	Domain,	FormationClass,	AdvisorType,	CanCapture, 
-				CostProgressionModel,	CostProgressionParaml,	PurchaseYield,	BuildCharges + 1
+				30,		CostProgressionModel,	CostProgressionParaml,	PurchaseYield,	BuildCharges + 1
 FROM			Units
 WHERE			UnitType = 'UNIT_BUILDER';
 
