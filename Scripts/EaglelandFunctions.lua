@@ -25,9 +25,14 @@ function UpdateSuzerainStatus()
 			if Players[player:GetInfluence():GetSuzerain()]and GLOBAL_FREE_CITY_STATES[i] then
 				print("City-State has Suzerain. Removing from list")
 				GLOBAL_FREE_CITY_STATES[i] = nil
-			elseif not (Players[player:GetInfluence:GetSuzerain] and GLOBAL_FREE_CITY_STATES[i]) then
+
+			elseif not (Players[player:GetInfluence():GetSuzerain()] and GLOBAL_FREE_CITY_STATES[i]) then
 				print("City-State has lost its Suzerain. Adding to list")
 				GLOBAL_FREE_CITY_STATES[i] = Game.GetCurrentGameTurn()
+				--If the Suzerain was Eagleland remove them from that list
+				for _, v in pairs(GLOBAL_EAGLELAND_SUZERAINS) do
+					if v[i] then v[i] = nil end
+				end
 			end
 		end
 	end
@@ -48,18 +53,18 @@ function OnEaglelandStartTurn(id)
 			--Rules: Eagleland must have met the city-state
 			--Current game turn - turn city-state added to GLOBAL_FREE_CITY_STATES >= 5
 			local numSuzerainsToGive = #cities - #GLOBAL_EAGLELAND_SUZERAINS[id]
-			for k, v in pairs(GLOBAL_FREE_CITY_STATES)
+			for k, v in pairs(GLOBAL_FREE_CITY_STATES) do
 				local cityState = Players[k]
-					if Game.GetCurrentGameTurn() - v >= 5 and player:GetDiplomacy:HasMet(k) then
-						numSuzerainsToGive = numSuzerainsToGive - 1
+				if Game.GetCurrentGameTurn() - v >= 5 and player:GetDiplomacy():HasMet(k) then
+					numSuzerainsToGive = numSuzerainsToGive - 1
 
-						local tokens = 0
-						while not Players[cityState():GetInfluence():GetSuzerain()] do
-							player:GetInfluence():GiveFreeTokenToPlayer(k)
-							tokens = tokens + 1
-						end
-						GLOBAL_EAGLELAND_SUZERAINS[id][k] = tokens
+					local tokens = 0
+					while not Players[cityState:GetInfluence():GetSuzerain()] do
+						player:GetInfluence():GiveFreeTokenToPlayer(k)
+						tokens = tokens + 1
 					end
+					GLOBAL_EAGLELAND_SUZERAINS[id][k] = tokens
+				end
 				if numSuzerainsToGive <= 0 then break end
 			end
 		end
