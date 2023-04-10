@@ -2,10 +2,11 @@
 -- Author: Anagram
 -- DateCreated: 4/9/2023 10:52:38 PM
 --------------------------------------------------------------
+TSL = ExposedMembers.GRAM_EAGLELAND
 
 --breaking away from Hungarian notation, you will NOT take me back!
-GLOBAL_EAGLELAND_SUZERAINS = ReadCustomData("GRAM_EAGLELAND_SUZERAINS") or {}
-GLOBAL_FREE_CITY_STATES = ReadCustomData("GRAM_FREE_CITY_STATES") or {}
+GLOBAL_EAGLELAND_SUZERAINS = TSL.ReadMyCustomData("GRAM_EAGLELAND_SUZERAINS") or {}
+GLOBAL_FREE_CITY_STATES = TSL.ReadMyCustomData("GRAM_FREE_CITY_STATES") or {}
 
 --GLOBAL_EAGLELAND = GameInfo.Civilizations["CIVILIZATION_GRAM_EAGLELAND"]
 
@@ -36,7 +37,7 @@ function UpdateSuzerainStatus()
 			end
 		end
 	end
-	WriteCustomData("GRAM_FREE_CITY_STATES", GLOBAL_FREE_CITY_STATES)
+	TSL.WriteMyCustomData("GRAM_FREE_CITY_STATES", GLOBAL_FREE_CITY_STATES)
 end
 
 function OnEaglelandStartTurn(id)
@@ -67,6 +68,8 @@ function OnEaglelandStartTurn(id)
 				end
 				if numSuzerainsToGive <= 0 then break end
 			end
+
+			TSL.WriteMyCustomData("GRAM_EAGLELAND_SUZERAINS", GLOBAL_EAGLELAND_SUZERAINS)
 		end
 	end
 end
@@ -90,9 +93,9 @@ function InitNewGame()
 		GameEvents.PlayerTurnStarted.Add(OnEaglelandStartTurn)
 	end
 
-	WriteCustomData("GRAM_EAGLELAND_SUZERAINS", GLOBAL_EAGLELAND_SUZERAINS)
-	WriteCustomData("GRAM_FREE_CITY_STATES", GLOBAL_FREE_CITY_STATES)
-	WriteCustomData("GRAM_EAGLELAND_INIT", true)
+	TSL.WriteMyCustomData("GRAM_EAGLELAND_SUZERAINS", GLOBAL_EAGLELAND_SUZERAINS)
+	TSL.WriteMyCustomData("GRAM_FREE_CITY_STATES", GLOBAL_FREE_CITY_STATES)
+	TSL.WriteMyCustomData("GRAM_EAGLELAND_INIT", true)
 end
 
-if not ReadCustomData("GRAM_EAGLELAND_INIT") then InitNewGame() end
+if not TSL.ReadMyCustomData("GRAM_EAGLELAND_INIT") then InitNewGame() end
