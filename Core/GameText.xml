@@ -176,7 +176,7 @@
 		<Row Tag="LOC_CITIZEN_GRAM_EAGLELAND_MALE_21" Language="en_US">
 			<Text>Mr. Poochyfud</Text>
 		</Row>
-		<Row Tag="LOC_CITIZEN_GRAM_EAGLELAND_MALE_22" Langauge="en_US">
+		<Row Tag="LOC_CITIZEN_GRAM_EAGLELAND_MALE_22" Language="en_US">
 			<Text>Enrich Flavor</Text>
 		</Row>
 		<!--Okay I gotta move on to females at some point my lord-->
@@ -205,10 +205,7 @@
 			<Text>Electra</Text>
 		</Row>
 
-		<Row Tag="LOC_CIVINFO_CAPITAL" Language="en_US">
-			<Text>Capital City</Text>
-		</Row>
-		<Row Tag="LOC_CIVINFO_GRAM_EAGLELAND" Language="en_US">
+		<Row Tag="LOC_CIVINFO_GRAM_EAGLELAND_CAPITAL" Language="en_US">
 			<Text>Onett</Text>
 		</Row>
 		
@@ -224,7 +221,7 @@
 		<Row Tag="LOC_PEDIA_LEADERS_PAGE_GRAM_NESS_TITLE" Language="en_US">
 			<Text>Ness</Text>
 		</Row>
-		<Row Tag="LOC_PEDIA_LEADERS_PAGE_GRAM_NESS_SUBTITLE" Langauge="en_US">
+		<Row Tag="LOC_PEDIA_LEADERS_PAGE_GRAM_NESS_SUBTITLE" Language="en_US">
 			<Text>The Chosen Boy</Text>
 		</Row>
 		<Row Tag="LOC_PEDIA_LEADERS_PAGE_GRAM_NESS_CHAPTER_CAPSULE_BODY" Language="en_US">
@@ -241,10 +238,10 @@
 			<Text>Ness will attempt to get along with as many civilizations as possible and befriend them. He dislikes egregious warmongers.</Text>
 		</Row>
 
-		<Row Tag="LOC_TRAIT_CIVILIZATION_GRAM_EAGLELAND_SOVREIGNITY_NAME" Language="en_US">
-			<Text>Great Eagle Sovereignity</Text>
+		<Row Tag="LOC_TRAIT_CIVILIZATION_GRAM_EAGLELAND_SOVEREIGNTY_NAME" Language="en_US">
+			<Text>Great Eagle Sovereignty</Text>
 		</Row>
-		<Row Tag="LOC_TRAIT_CIVILIZATION_GRAM_EAGLELAND_SOVREIGNITY_DESC" Langauge="en_US">
+		<Row Tag="LOC_TRAIT_CIVILIZATION_GRAM_EAGLELAND_SOVEREIGNTY_DESC" Language="en_US">
 			<Text>If a City-State discovered by Eagleland goes 5 consecutive turns without a Suzerain, Eagleland establishes itself as its Suzerain (limited to number of cities Eagleland owns).</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_LEADER_GRAM_NESS_EARTHBOUND_NAME" Language="en_US">
@@ -261,10 +258,10 @@
 			<Text>Eagleland unique unit when Ness is their leader. Fights as a melee unit that may use various powers at the start of its turn to enhance its abilities. Cannot be trained by normal means.</Text>
 		</Row>
 
-		<Row Tag="LOC_UNIT_GRAM_ESCAGROMAN_NAME" Language="en_US">
+		<Row Tag="LOC_UNIT_GRAM_ESCARGO_MAN_NAME" Language="en_US">
 			<Text>Escargo Expressman</Text>
 		</Row>
-		<Row Tag="LOC_UNIT_GRAM_ESCARGOMAN_DESC" Language="en_US">
+		<Row Tag="LOC_UNIT_GRAM_ESCARGO_MAN_DESC" Language="en_US">
 			<Text>Eagleland unique unit that replaces the builder. Cheaper to produce, and has one extra build charge.</Text>
 		</Row>
 	</LocalizedText>

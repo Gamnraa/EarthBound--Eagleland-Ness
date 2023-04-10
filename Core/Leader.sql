@@ -11,13 +11,13 @@ VALUES		('LEADER_GRAM_NESS',						'KIND_LEADER'	),
 
 
 INSERT INTO Leaders
-			(LeaderType				Name,							InheritFrom,			SceneLayers	)
+			(LeaderType,			Name,							InheritFrom,			SceneLayers	)
 VALUES		('LEADER_GRAM_NESS',	'LOC_LEADER_GRAM_NESS_NAME',	'LEADER_DEFAULT',		4			);
 
 
 
 INSERT INTO CivilizationLeaders
-			(CivilzationType,					LeaderType,					CapitalName						)
+			(CivilizationType,					LeaderType,					CapitalName						)
 VALUES		('CIVILIZATION_GRAM_EAGLELAND',		'LEADER_GRAM_NESS',			'LOC_CITY_NAME_GRAM_EAGLELAND_1');
 
 
@@ -35,7 +35,7 @@ VALUES		('AGENDA_GRAM_NATURALLY_FRIENDLY',			'LOC_AGENDA_GRAM_NATURALLY_FRIENDLY
 
 
 INSERT INTO Traits
-			(TraitType,									Name											Description									)
+			(TraitType,									Name,											Description									)
 VALUES		('TRAIT_AGENDA_GRAM_NATURALLY_FRIENDLY',	'LOC_AGENDA_GRAM_NATURALLY_FRIENDLY_NAME',		'LOC_AGENDA_GRAM_NATURALLY_FRIENDLY_DESC'	);
 
 
@@ -47,7 +47,7 @@ VALUES		('AGENDA_GRAM_NATURALLY_FRIENDLY',		'TRAIT_AGENDA_GRAM_NATURALLY_FRIENDL
 
 
 INSERT INTO HistoricalAgendas
-			(LeaderType					AgendaType								)
+			(LeaderType,				AgendaType								)
 VALUES		('LEADER_GRAM_NESS',		'AGENDA_GRAM_NATURALLY_FRIENDLY'		);
 
 
@@ -59,8 +59,8 @@ VALUES		('AGENDA_GRAM_NATURALLY_FRIENDLY',			'AGENDA_PARANOID'		);
 
 
 INSERT INTO AgendaPreferredLeaders
-			(AgendaType,								LeaderType,						PercentChance	)
-VALUES		('AGENDA_NATURALIST',						'LEADER_GRAM_NESS',				66				);
+			(AgendaType,								LeaderType,						PercentageChance)
+VALUES		('AGENDA_EXPLORER',							'LEADER_GRAM_NESS',				33				);
 
 
 
@@ -72,7 +72,7 @@ VALUES		('TRAIT_AGENDA_GRAM_NATURALLY_FRIENDLY',	'AGENDA_MODIFIER_GRAM_NATURALLY
 
 
 INSERT INTO Modifiers
-			(ModifierId,										ModifierType									SubjectRequireMentSetId					)
+			(ModifierId,										ModifierType,									SubjectRequirementSetId					)
 VALUES		('AGENDA_MODIFIER_GRAM_NATURALLY_FRIENDLY_UNMET',	'MODIFIER_PLAYER_DIPLOMACY_SIMPLE_MODIFIER',	'REQSET_GRAM_NATURALLY_FRIENDLY_UNMET'	),
 			('AGENDA_MODIFIER_GRAM_NATURALLY_FRIENDLY_MET',		'MODIFIER_PLAYER_DIPLOMACY_SIMPLE_MODIFIER',	'REQSET_GRAM_NATURALLY_FRIENDLY_MET'	);
 
@@ -86,8 +86,8 @@ VALUES		('AGENDA_MODIFIER_GRAM_NATURALLY_FRIENDLY_UNMET',	'Sample',	'LOC_TOOLTIP
 
 
 INSERT INTO ModifierArguments
-			(ModifierId,										Name,							Value												),
-VALUES		('AGENDA_MODIFIER_GRAM_NATURALLY_FRIENDLY_UNMET',	'InitialValue',					-5												),
+			(ModifierId,										Name,							Value												)
+VALUES		('AGENDA_MODIFIER_GRAM_NATURALLY_FRIENDLY_UNMET',	'InitialValue',					-5													),
 			('AGENDA_MODIFIER_GRAM_NATURALLY_FRIENDLY_UNMET',	'MaxValue',						-5													),
 			('AGENDA_MODIFIER_GRAM_NATURALLY_FRIENDLY_UNMET',	'StatementKey',					'LOC_DIPLO_WARNING_LEADER_GRAM_NESS_REASON_ANY'		),
 			('AGENDA_MODIFIER_GRAM_NATURALLY_FRIENDLY_UNMET',	'SimpleModifierDescription',	'LOC_DIPLO_MODIFIER_GRAM_NATURALLY_FRIENDLY_UNMET'	),
@@ -109,7 +109,7 @@ VALUES		('REQSET_GRAM_NATURALLY_FRIENDLY_UNMET',			'REQUIREMENTSET_TEST_ALL'		),
 
 
 INSERT INTO RequirementSetRequirements
-			(RequirementSetId									RequirmentId							)
+			(RequirementSetId,									RequirmentId							)
 VALUES		('REQSET_GRAM_NATURALLY_FRIENDLY_UNMET',			'REQUIRES_MET_10_TURNS_AGO'				),
 			('REQSET_GRAM_NATURALLY_FRIENDLY_UNMET',			'REQUIRES_MAJOR_CIV_OPPONENT'			),
 			('REQSET_GRAM_NATURALLY_FRIENDLY_UNMET',			'REQUIRES_WARMONGER_TRIGGER'			), 

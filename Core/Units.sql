@@ -53,8 +53,8 @@ VALUES		('LEADER_GRAM_NESS',			'TRAIT_LEADER_GRAM_PSYCHIC'			);
 
 
 INSERT INTO CivilizationTraits
-			(CivilizationType,				TraitType							)	
-VALUES		('CIVILIZATION_GRAM_EAGLELAND',	'TRAIT_CIVILZATION_GRAM_ESCARGOMAN'	);
+			(CivilizationType,				TraitType								)	
+VALUES		('CIVILIZATION_GRAM_EAGLELAND',	'TRAIT_CIVILIZATION_GRAM_ESCARGOMAN'	);
 
 
 
@@ -63,18 +63,19 @@ INSERT INTO Units
 				Name,
 				Description,
 				TraitType,
-				BaseMoves, Combat, BaseSightRange,	ZoneOfControl, Domain,			FormationClass
-				PromotionClass,						Maintenance,	CanTrain										)
+				BaseMoves, Combat, BaseSightRange,	ZoneOfControl,	Domain,			FormationClass,
+				PromotionClass,						Maintenance,	CanTrain,		Cost							)
 VALUES			('UNIT_GRAM_PSYCHIC',
 				'LOC_UNIT_GRAM_PSYCHIC_NAME',	
 				'LOC_UNIT_GRAM_PSYCHIC_DESC',
 				'TRAIT_LEADER_GRAM_PSYCHIC',
-				2,			18,		2,				'true',			'DOMAIN_LAND',	'FORMATION_CLASS_LAND_COMBAT',
-				'PROMOTION_CLASS_LAND_COMBAT',		1,				'false'											);		
+				2,			18,		2,				1,				'DOMAIN_LAND',	'FORMATION_CLASS_LAND_COMBAT',
+				'PROMOTION_CLASS_MELEE',			1,				0,		0										);		
 				
 INSERT INTO	UnitAiInfos
-			(UnitType,				AiType			)
-VALUES		('UNIT_GRAM_PSYCHIC',	'UNITAI_MELEE'	);		
+			(UnitType,				AiType				)
+VALUES		('UNIT_GRAM_PSYCHIC',	'UNITTYPE_MELEE'	),
+			('UNIT_GRAM_PSYCHIC',	'UNITAI_COMBAT'		);		
 
 
 
@@ -84,20 +85,21 @@ INSERT INTO Units
 				Description,
 				TraitType,
 				BaseMoves,	BaseSightRange,	ZoneOfControl,	Domain,	FormationClass,	AdvisorType,	CanCapture, 
-				Cost,	CostProgressionModel,	CostProgressionParaml,	PurchaseYield,	BuildCharges)
+				Cost,	CostProgressionModel,	CostProgressionParam1,	PurchaseYield,	BuildCharges)
 SELECT			'UNIT_GRAM_ESCARGOMAN',
 				'LOC_UNIT_GRAM_ESCARGOMAN_NAME',
 				'LOC_UNIT_GRAM_ESCARGOMAN_DESC',
 				'TRAIT_CIVILIZATION_GRAM_ESCARGOMAN',
 				BaseMoves,	BaseSightRange,	ZoneOfControl,	Domain,	FormationClass,	AdvisorType,	CanCapture, 
-				30,		CostProgressionModel,	CostProgressionParaml,	PurchaseYield,	BuildCharges + 1
+				30,		CostProgressionModel,	CostProgressionParam1,	PurchaseYield,	BuildCharges + 1
 FROM			Units
 WHERE			UnitType = 'UNIT_BUILDER';
 
 INSERT INTO UnitAiInfos
-			(UnitType,				AiType			)
-VALUES		('UNIT_GRAM_ESCARGOMAN','UNITAI_BUILD'	);
+			(UnitType,					AiType				)
+VALUES		('UNIT_GRAM_ESCARGOMAN',	'UNITTYPE_CIVILIAN'	),
+			('UNIT_GRAM_ESCARGOMAN',	'UNITAI_BUILD'	);
 
 INSERT INTO UnitReplaces
-			(CivUniqueUnitType,		ReplacesUnitType)
-VALUES		('UNIT_GRAM_ESCARGOMAN','UNIT_BUILDER'	);
+			(CivUniqueUnitType,			ReplacesUnitType)
+VALUES		('UNIT_GRAM_ESCARGOMAN',	'UNIT_BUILDER'	);
