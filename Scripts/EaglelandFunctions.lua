@@ -2,11 +2,11 @@
 -- Author: Anagram
 -- DateCreated: 4/9/2023 10:52:38 PM
 --------------------------------------------------------------
-TSL = ExposedMembers.GRAM_EAGLELAND
+TSL = {} 
 
 --breaking away from Hungarian notation, you will NOT take me back!
-GLOBAL_EAGLELAND_SUZERAINS = TSL.ReadMyCustomData("GRAM_EAGLELAND_SUZERAINS") or {}
-GLOBAL_FREE_CITY_STATES = TSL.ReadMyCustomData("GRAM_FREE_CITY_STATES") or {}
+GLOBAL_EAGLELAND_SUZERAINS = {}
+GLOBAL_FREE_CITY_STATES = {}
 
 --GLOBAL_EAGLELAND = GameInfo.Civilizations["CIVILIZATION_GRAM_EAGLELAND"]
 
@@ -15,7 +15,7 @@ function IsEagleland(id)
 end
 
 function UpdateSuzerainStatus()
-	for i = GameDefines.MAX_MAJOR_CIVS, GameDefines.MAX_CIV_PLAYERS-1, 1 do
+	for i = 20, GameDefines.MAX_PLAYERS-1, 1 do
 		
 		local player = Players[i]
 		if GLOBAL_FREE_CITY_STATES[i] and not player:IsAlive() then
@@ -75,7 +75,11 @@ function OnEaglelandStartTurn(id)
 end
 							
 function InitNewGame()
-	for i = 0, GameDefines.MAX_CIV_PLAYERS-1, 1 do
+	TSL = ExposedMembers.GRAM_EAGLELAND
+	GLOBAL_EAGLELAND_SUZERAINS = TSL.ReadMyCustomData("GRAM_EAGLELAND_SUZERAINS") or {}
+	GLOBAL_FREE_CITY_STATES = TSL.ReadMyCustomData("GRAM_FREE_CITY_STATES") or {}
+	if TSL.ReadMyCustomData("GRAM_EAGLELAND_INIT") then return end
+	for i = 0, GameDefines.MAX_PLAYERS-1, 1 do
 		local player = Players[i]
 		if player:WasEverAlive() and player:IsAlive() then
 			if IsEagleland(i) then
@@ -98,4 +102,4 @@ function InitNewGame()
 	TSL.WriteMyCustomData("GRAM_EAGLELAND_INIT", true)
 end
 
-if not TSL.ReadMyCustomData("GRAM_EAGLELAND_INIT") then InitNewGame() end
+Events.LoadScreenClose.Add(InitNewGame)
