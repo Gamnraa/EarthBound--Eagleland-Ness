@@ -10,7 +10,7 @@ GLOBAL_FREE_CITY_STATES = ReadCustomData("GRAM_FREE_CITY_STATES") or {}
 --GLOBAL_EAGLELAND = GameInfo.Civilizations["CIVILIZATION_GRAM_EAGLELAND"]
 
 function IsEagleland(id)
-	return PlayersConfigurations[id]:GetCivilizationTypeName() == CIVILIZATION_GRAM_EAGLELAND
+	return PlayersConfigurations[id]:GetCivilizationTypeName() == "CIVILIZATION_GRAM_EAGLELAND"
 end
 
 function InitNewGame()
