@@ -29,6 +29,7 @@ function InitNewGame()
 
 	WriteCustomData("GRAM_EAGLELAND_SUZERAINS", GLOBAL_EAGLELAND_SUZERAINS)
 	WriteCustomData("GRAM_FREE_CITY_STATES", GLOBAL_FREE_CITY_STATES)
+	WriteCustomData("GRAM_EAGLELAND_INIT", true)
 end
 
-if #GLOBAL_EAGLELAND_SUZERAINS == 0 then InitNewGame() end
+if not ReadCustomData("GRAM_EAGLELAND_INIT") then InitNewGame() end
