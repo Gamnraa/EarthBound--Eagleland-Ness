@@ -44,7 +44,7 @@ VALUES	(
 		'LEADER_GRAM_NESS', -- LeaderType
 		'UNIT_GRAM_ESCARGOMAN', -- Type
 		'ICON_GRAM_ESCARGOMAN', -- Icon
-		'LOC_UNIT_GRAM_ESCARGO_MAN_NAME', -- Name
-		'LOC_UNIT_GRAM_ESCARGO_MAN_DESC', -- Description
+		'LOC_UNIT_GRAM_ESCARGOMAN_NAME', -- Name
+		'LOC_UNIT_GRAM_ESCARGOMAN_DESC', -- Description
 		20 -- SortIndex
 		);

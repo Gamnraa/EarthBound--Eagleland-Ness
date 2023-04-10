@@ -18,7 +18,7 @@
     <AssemblyName>NessEagleland</AssemblyName>
     <RootNamespace>NessEagleland</RootNamespace>
     <FrontEndActionData><![CDATA[<FrontEndActions><UpdateDatabase id="NewAction"><File>Core/Config.sql</File></UpdateDatabase><UpdateText id="NewAction"><File>Core/GameText.xml</File></UpdateText><UpdateColors id="NewAction"><File>Core/Colors.sql</File></UpdateColors><UpdateArt id="NewAction"><File>(Mod Art Dependency File)</File></UpdateArt></FrontEndActions>]]></FrontEndActionData>
-    <InGameActionData><![CDATA[<InGameActions><UpdateDatabase id="NewAction"><File>Core/Civilization.sql</File><File>Core/Leader.sql</File><File>Core/Trait.sql</File><File>Core/Units.sql</File><File /></UpdateDatabase><UpdateText id="NewAction"><File>Core/GameText.xml</File></UpdateText><UpdateColors id="NewAction"><File>Core/Colors.sql</File></UpdateColors><UpdateArt id="NewAction"><File>(Mod Art Dependency File)</File></UpdateArt></InGameActions>]]></InGameActionData>
+    <InGameActionData><![CDATA[<InGameActions><UpdateDatabase id="NewAction"><File>Core/Civilization.sql</File><File>Core/Leader.sql</File><File>Core/Trait.sql</File><File>Core/Units.sql</File><File></File></UpdateDatabase><UpdateText id="NewAction"><File>Core/GameText.xml</File></UpdateText><UpdateColors id="NewAction"><File>Core/Colors.sql</File></UpdateColors><UpdateArt id="NewAction"><File>(Mod Art Dependency File)</File></UpdateArt><AddGameplayScripts id="EaglelandScripts"><File>Scripts/EaglelandFunctions.lua</File></AddGameplayScripts></InGameActions>]]></InGameActionData>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Default' ">
     <OutputPath>.</OutputPath>
@@ -29,6 +29,7 @@
   <ItemGroup>
     <Folder Include="Core" />
     <Folder Include="ArtDefs" />
+    <Folder Include="Scripts" />
   </ItemGroup>
   <ItemGroup>
     <ArtDef Include="ArtDefs\Civilizations.artdef">
@@ -56,6 +57,9 @@
       <SubType>Content</SubType>
     </Content>
     <Content Include="Core\Units.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Scripts\EaglelandFunctions.lua">
       <SubType>Content</SubType>
     </Content>
   </ItemGroup>

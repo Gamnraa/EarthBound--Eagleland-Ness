@@ -258,10 +258,10 @@
 			<Text>Eagleland unique unit when Ness is their leader. Fights as a melee unit that may use various powers at the start of its turn to enhance its abilities. Cannot be trained by normal means.</Text>
 		</Row>
 
-		<Row Tag="LOC_UNIT_GRAM_ESCARGO_MAN_NAME" Language="en_US">
+		<Row Tag="LOC_UNIT_GRAM_ESCARGOMAN_NAME" Language="en_US">
 			<Text>Escargo Expressman</Text>
 		</Row>
-		<Row Tag="LOC_UNIT_GRAM_ESCARGO_MAN_DESC" Language="en_US">
+		<Row Tag="LOC_UNIT_GRAM_ESCARGOMAN_DESC" Language="en_US">
 			<Text>Eagleland unique unit that replaces the builder. Cheaper to produce, and has one extra build charge.</Text>
 		</Row>
 	</LocalizedText>
