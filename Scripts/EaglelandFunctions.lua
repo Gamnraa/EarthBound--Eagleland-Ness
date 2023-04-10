@@ -7,13 +7,17 @@
 GLOBAL_EAGLELAND_SUZERAINS = ReadCustomData("GRAM_EAGLELAND_SUZERAINS") or {}
 GLOBAL_FREE_CITY_STATES = ReadCustomData("GRAM_FREE_CITY_STATES") or {}
 
-GLOBAL_EAGLELAND = GameInfo.Civilizations["CIVILIZATION_GRAM_EAGLELAND"]
+--GLOBAL_EAGLELAND = GameInfo.Civilizations["CIVILIZATION_GRAM_EAGLELAND"]
+
+function IsEagleland(id)
+	return PlayersConfigurations[id]:GetCivilizationTypeName() == CIVILIZATION_GRAM_EAGLELAND
+end
 
 function InitNewGame()
 	for i = 0, GameDefines.MAX_PLAYERS-1, 1 do
 		local player = Players[i]
 		if player:WasEverAlive() and player:IsAlive() then
-			if player:GetCivilizationType() == GLOBAL_EAGLELAND  then
+			if IsEagleland(i) then
 				GLOBAL_EAGLELAND_SUZERAINS[i] = {}
 			end
 		
