@@ -18,7 +18,7 @@
     <AssemblyName>NessEagleland</AssemblyName>
     <RootNamespace>NessEagleland</RootNamespace>
     <FrontEndActionData><![CDATA[<FrontEndActions><UpdateDatabase id="NewAction"><File>Core/Config.sql</File></UpdateDatabase><UpdateText id="NewAction"><File>Core/GameText.xml</File></UpdateText><UpdateColors id="NewAction"><File>Core/Colors.sql</File></UpdateColors><UpdateArt id="NewAction"><File>(Mod Art Dependency File)</File></UpdateArt></FrontEndActions>]]></FrontEndActionData>
-    <InGameActionData><![CDATA[<InGameActions><UpdateDatabase id="NewAction"><File>Core/Civilization.sql</File><File>Core/Leader.sql</File><File>Core/Trait.sql</File><File>Core/Units.sql</File><File></File></UpdateDatabase><UpdateText id="NewAction"><File>Core/GameText.xml</File></UpdateText><UpdateColors id="NewAction"><File>Core/Colors.sql</File></UpdateColors><UpdateArt id="NewAction"><File>(Mod Art Dependency File)</File></UpdateArt><AddGameplayScripts id="EaglelandScripts"><File>Scripts/EaglelandFunctions.lua</File></AddGameplayScripts></InGameActions>]]></InGameActionData>
+    <InGameActionData><![CDATA[<InGameActions><UpdateDatabase id="NewAction"><File>Core/Civilization.sql</File><File>Core/Leader.sql</File><File>Core/Trait.sql</File><File>Core/Units.sql</File><File></File></UpdateDatabase><UpdateText id="NewAction"><File>Core/GameText.xml</File></UpdateText><UpdateColors id="NewAction"><File>Core/Colors.sql</File></UpdateColors><UpdateArt id="NewAction"><File>(Mod Art Dependency File)</File></UpdateArt><AddUserInterfaces id="UiScripts"><Properties><Context>InGame</Context></Properties><File>Scripts/DataPersistence.xml</File></AddUserInterfaces><AddGameplayScripts id="EagleScripts"><File>Scripts/EaglelandFunctions.lua</File></AddGameplayScripts></InGameActions>]]></InGameActionData>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Default' ">
     <OutputPath>.</OutputPath>
@@ -57,6 +57,12 @@
       <SubType>Content</SubType>
     </Content>
     <Content Include="Core\Units.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Scripts\DataPersistence.lua">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Scripts\DataPersistence.xml">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Scripts\EaglelandFunctions.lua">

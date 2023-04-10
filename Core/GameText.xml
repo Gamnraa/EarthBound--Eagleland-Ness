@@ -60,10 +60,10 @@
 			<Text>Scaraba Desert</Text>
 		</Row>
 
-		<Row Tag="LOC_NAMED_VOLCANO_FIRE_SPRING" Language="en_US">
+		<Row Tag="LOC_NAMED_VOLCANO_GRAM_FIRE_SPRING" Language="en_US">
 			<Text>Fire Spring</Text>
 		</Row>
-		<Row Tag="LOC_NAMED_VOLCANO_LOST_UNDERWORLD" Language="en_US">
+		<Row Tag="LOC_NAMED_VOLCANO_GRAM_LOST_UNDERWORLD" Language="en_US">
 			<Text>Lost Underworld</Text>
 		</Row>
 
