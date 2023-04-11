@@ -23,7 +23,7 @@ function IsEagleland(id)
 end
 
 function UpdateSuzerainStatus()
-	for _, i in pairs(PlayerManager.GetAliveMinorsIDs()) do
+	for _, i in pairs(PlayerManager.GetAliveMinorIDs()) do
 		
 		local player = Players[i]
 		if GLOBAL_FREE_CITY_STATES[i] and not player:IsAlive() then
@@ -35,7 +35,7 @@ function UpdateSuzerainStatus()
 				print("City-State has Suzerain. Removing from list")
 				GLOBAL_FREE_CITY_STATES[i] = nil
 
-			elseif not (Players[player:GetInfluence():GetSuzerain()] and GLOBAL_FREE_CITY_STATES[i]) then
+			elseif not (Players[player:GetInfluence():GetSuzerain()] or GLOBAL_FREE_CITY_STATES[i]) then
 				print("City-State has lost its Suzerain. Adding to list")
 				GLOBAL_FREE_CITY_STATES[i] = Game.GetCurrentGameTurn()
 				--If the Suzerain was Eagleland remove them from that list
