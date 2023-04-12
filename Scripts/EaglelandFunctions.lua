@@ -100,15 +100,25 @@ function OnEaglelandDiscoverNaturalWonder()
 	
 	local bonus = math.floor(50 * GameInfo.GameSpeeds[GameConfiguration.GetGameSpeedType()].CostMultiplier / 100)
 
-	player:ChangeDiplomaticFavor(bonus)
 	player:GetCulture():ChangeCurrentCulturalProgress(bonus)
+	player:ChangeDiplomaticFavor(bonus)
+	
 end
 							
 function InitGame()
 	TSL = ExposedMembers.GRAM_EAGLELAND
 	GLOBAL_EAGLELAND_SUZERAINS = TSL.ReadMyCustomData("GRAM_EAGLELAND_SUZERAINS") or {}
 	GLOBAL_FREE_CITY_STATES = TSL.ReadMyCustomData("GRAM_FREE_CITY_STATES") or {}
-	if TSL.ReadMyCustomData("GRAM_EAGLELAND_INIT") then return end
+
+
+	if TSL.ReadMyCustomData("GRAM_EAGLELAND_INIT") then 
+		if GetTableLength(GLOBAL_EAGLELAND_SUZERAINS) > 0 then
+			GameEvents.PlayerTurnStarted.Add(OnEaglelandStartTurn)
+			--Events.NaturalWonderRevealed.Add(OnEaglelandDiscoverNaturalWonder)
+		end
+		return 
+	end
+
 	for i = 0, GameDefines.MAX_PLAYERS-3, 1 do
 		local player = Players[i]
 		if player:WasEverAlive() and player:IsAlive() then
@@ -124,6 +134,12 @@ function InitGame()
 	end 
 	print(#GLOBAL_EAGLELAND_SUZERAINS)
 
+	if GetTableLength(GLOBAL_EAGLELAND_SUZERAINS) > 0 then
+		--TODO Hook our functions
+		GameEvents.PlayerTurnStarted.Add(OnEaglelandStartTurn)
+		--Events.NaturalWonderRevealed.Add(OnEaglelandDiscoverNaturalWonder)
+	end
+
 	TSL.WriteMyCustomData("GRAM_EAGLELAND_SUZERAINS", GLOBAL_EAGLELAND_SUZERAINS)
 	TSL.WriteMyCustomData("GRAM_FREE_CITY_STATES", GLOBAL_FREE_CITY_STATES)
 	TSL.WriteMyCustomData("GRAM_EAGLELAND_INIT", true)
@@ -133,7 +149,7 @@ end
 if GetTableLength(GLOBAL_EAGLELAND_SUZERAINS) > 0 then
 	--TODO Hook our functions
 	GameEvents.PlayerTurnStarted.Add(OnEaglelandStartTurn)
-	Events.NaturalWonderRevealed.Add(OnEaglelandDiscoverNaturalWonder)
+	--Events.NaturalWonderRevealed.Add(OnEaglelandDiscoverNaturalWonder)
 end
 
 Events.LoadScreenClose.Add(InitGame)
