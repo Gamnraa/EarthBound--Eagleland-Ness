@@ -101,7 +101,7 @@ function OnEaglelandDiscoverNaturalWonder()
 	local bonus = math.floor(50 * GameInfo.GameSpeeds[GameConfiguration.GetGameSpeedType()].CostMultiplier / 100)
 
 	player:GetCulture():ChangeCurrentCulturalProgress(bonus)
-	player:ChangeDiplomaticFavor(bonus)
+	TSL.ChangeMyDiplomaticFavor(player, bonus)
 	
 end
 							
@@ -114,7 +114,7 @@ function InitGame()
 	if TSL.ReadMyCustomData("GRAM_EAGLELAND_INIT") then 
 		if GetTableLength(GLOBAL_EAGLELAND_SUZERAINS) > 0 then
 			GameEvents.PlayerTurnStarted.Add(OnEaglelandStartTurn)
-			--Events.NaturalWonderRevealed.Add(OnEaglelandDiscoverNaturalWonder)
+			Events.NaturalWonderRevealed.Add(OnEaglelandDiscoverNaturalWonder)
 		end
 		return 
 	end
@@ -137,7 +137,7 @@ function InitGame()
 	if GetTableLength(GLOBAL_EAGLELAND_SUZERAINS) > 0 then
 		--TODO Hook our functions
 		GameEvents.PlayerTurnStarted.Add(OnEaglelandStartTurn)
-		--Events.NaturalWonderRevealed.Add(OnEaglelandDiscoverNaturalWonder)
+		Events.NaturalWonderRevealed.Add(OnEaglelandDiscoverNaturalWonder)
 	end
 
 	TSL.WriteMyCustomData("GRAM_EAGLELAND_SUZERAINS", GLOBAL_EAGLELAND_SUZERAINS)

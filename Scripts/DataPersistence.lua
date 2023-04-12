@@ -18,6 +18,12 @@ end
 ExposedMembers.GRAM_EAGLELAND.WriteMyCustomData = WriteMyCustomData;
 ExposedMembers.GRAM_EAGLELAND.ReadMyCustomData = ReadMyCustomData;
 
+function ChangeMyDiplomaticFavor(player, amount)
+	player:ChangeDiplomaticFavor(amount)
+end
+
+ExposedMembers.GRAM_EAGLELAND.ChangeMyDiplomaticFavor
+
 MAP_X, MAP_Y = Map.GetGridSize()
 
 local naturalWonders = {}
