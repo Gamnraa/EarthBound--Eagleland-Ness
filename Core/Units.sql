@@ -95,6 +95,13 @@ SELECT			'UNIT_GRAM_ESCARGOMAN',
 FROM			Units
 WHERE			UnitType = 'UNIT_BUILDER';
 
+
+INSERT INTO Improvement_ValidBuildUnits
+			(ImprovementType, UnitType)
+SELECT		ImprovementType, 'UNIT_GRAM_ESCARGOMAN'
+FROM Improvement_ValidBuildUnits
+WHERE UnitType = 'UNIT_BUILDER';
+
 INSERT INTO UnitAiInfos
 			(UnitType,					AiType				)
 VALUES		('UNIT_GRAM_ESCARGOMAN',	'UNITTYPE_CIVILIAN'	),
