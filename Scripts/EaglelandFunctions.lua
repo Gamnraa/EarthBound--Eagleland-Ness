@@ -10,6 +10,8 @@ GLOBAL_FREE_CITY_STATES = {}
 
 --GLOBAL_EAGLELAND = GameInfo.Civilizations["CIVILIZATION_GRAM_EAGLELAND"]
 function GetTableLength(t)
+	--# seems to returns length - 1
+	--AND 0 if empty so yeah that won't work
 	local i = 0
 	for _, _ in pairs(t) do
 		i = i + 1
@@ -49,15 +51,11 @@ function UpdateSuzerainStatus()
 end
 
 function OnEaglelandStartTurn(id)
-	print("eagle")
 	if not Players[id]:IsAlive() then return end
-	print("has landed")
 
 	local eagleland = Players[id]
 	if IsEagleland(id) then
 		UpdateSuzerainStatus()
-		
-		print("is eagle")
 	
 		local numCities = eagleland:GetCities():GetCount()
 		print(numCities, #GLOBAL_EAGLELAND_SUZERAINS[id])
@@ -91,8 +89,22 @@ function OnEaglelandStartTurn(id)
 		end
 	end
 end
+
+function OnEaglelandDiscoverNaturalWonder()
+	--Fun fact, I gave this no params because none pushed by the event are the player that discovered them
+	--I'll be real, no clue how we'll handle AI players finding natural wonders
+	--Thanks Firaxis
+	print("Eagleland Natural Wonder")
+	local player = Players[Game.GetLocalPlayer()]
+	if not (player and IsEagleland(Game.GetLocalPlayer())) then return end
+	
+	local bonus = math.floor(50 * GameInfo.GameSpeeds[GameConfiguration.GetGameSpeedType()].CostMultiplier / 100)
+
+	player:ChangeDiplomaticFavor(bonus)
+	player:GetCulture():ChangeCurrentCulturalProgress(bonus)
+end
 							
-function InitNewGame()
+function InitGame()
 	TSL = ExposedMembers.GRAM_EAGLELAND
 	GLOBAL_EAGLELAND_SUZERAINS = TSL.ReadMyCustomData("GRAM_EAGLELAND_SUZERAINS") or {}
 	GLOBAL_FREE_CITY_STATES = TSL.ReadMyCustomData("GRAM_FREE_CITY_STATES") or {}
@@ -111,14 +123,17 @@ function InitNewGame()
 		end
 	end 
 	print(#GLOBAL_EAGLELAND_SUZERAINS)
-	if GetTableLength(GLOBAL_EAGLELAND_SUZERAINS) > 0 then
-		--TODO Hook our functions
-		GameEvents.PlayerTurnStarted.Add(OnEaglelandStartTurn)
-	end
 
 	TSL.WriteMyCustomData("GRAM_EAGLELAND_SUZERAINS", GLOBAL_EAGLELAND_SUZERAINS)
 	TSL.WriteMyCustomData("GRAM_FREE_CITY_STATES", GLOBAL_FREE_CITY_STATES)
 	TSL.WriteMyCustomData("GRAM_EAGLELAND_INIT", true)
 end
 
-Events.LoadScreenClose.Add(InitNewGame)
+
+if GetTableLength(GLOBAL_EAGLELAND_SUZERAINS) > 0 then
+	--TODO Hook our functions
+	GameEvents.PlayerTurnStarted.Add(OnEaglelandStartTurn)
+	Events.NaturalWonderRevealed.Add(OnEaglelandDiscoverNaturalWonder)
+end
+
+Events.LoadScreenClose.Add(InitGame)

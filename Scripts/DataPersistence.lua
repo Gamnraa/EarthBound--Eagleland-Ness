@@ -15,5 +15,32 @@ function ReadMyCustomData(TableStringKey)
     return MyDatatable;
 end
 
+MAP_X, MAP_Y = Map.GetGridSize()
+
+local naturalWonders = {}
+local naturalWonderPlots = {}
+
+for _, row in pairs(DB.Query("SELECT * FROM Features WHERE NaturalWonder = '1'")) do
+	naturalWonders[row.FeatureType] = true
+end
+
+function MapSweep()
+	for x = 0, MAP_X - 1, 1 do
+		for y = 0, MAP_Y - 1, 1 do
+			local plot = Map.GetPlot(x, y)
+			if plot then
+				print(plot:GetFeatureType())
+				if naturalWonders[plot:GetFeatureType()] then
+					print("Plot has a natural wonder, adding to list")
+					table.insert(naturalWonderPlots, plot)
+				end
+			end
+		end
+	end
+end
+MapSweep()
+	
+WriteMyCustomData("GRAM_NATURAL_WONDER_PLOTS", naturalWonderPlots)			
+
 ExposedMembers.GRAM_EAGLELAND.WriteMyCustomData = WriteMyCustomData;
 ExposedMembers.GRAM_EAGLELAND.ReadMyCustomData = ReadMyCustomData;
