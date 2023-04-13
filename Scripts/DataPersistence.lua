@@ -53,5 +53,5 @@ function MapSweep()
 end
 MapSweep()
 	
-WriteMyCustomData("GRAM_NATURAL_WONDER_PLOTS", naturalWonderPlots)			
+WriteMyCustomData("GRAM_NATURAL_WONDERS", naturalWonderPlots)			
 

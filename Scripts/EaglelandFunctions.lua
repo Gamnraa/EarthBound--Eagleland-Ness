@@ -7,6 +7,8 @@ TSL = {}
 --breaking away from Hungarian notation, you will NOT take me back!
 GLOBAL_EAGLELAND_SUZERAINS = {}
 GLOBAL_FREE_CITY_STATES = {}
+GLOBAL_NATURAL_WONDERS = {}
+GLOBAL_NATURAL_WONDER_OWNERS = {}
 
 --GLOBAL_EAGLELAND = GameInfo.Civilizations["CIVILIZATION_GRAM_EAGLELAND"]
 function GetTableLength(t)
@@ -50,13 +52,40 @@ function UpdateSuzerainStatus()
 	TSL.WriteMyCustomData("GRAM_FREE_CITY_STATES", GLOBAL_FREE_CITY_STATES)
 end
 
+function NaturalWondersOwnerCheck()
+	for _, plot in pairs(GLOBAL_NATURAL_WONDERS) do
+		local id = plot:GetOwner()
+		local index = plot:GetIndex()
+
+		if IsEagleland(id) and (GLOBAL_NATURAL_WONDER_OWNERS and not GLOBAL_NATURAL_WONDER_OWNERS[id][index]) then
+			print("Eagleland acquired new Natural Wonder")
+			GLOBAL_NATURAL_WONDER_OWNERS[id][index] = true
+
+			--8 / (TotalNaturalWonders / NumPlayerOwnedNaturalWonders) = bonus
+
+		elseif not IsEagleland(id) then
+			for _, v in pairs(GLOBAL_NATURAL_WONDER_OWNERS) do
+				if v[index] then
+					print("Eagleland lost Natural Wonder")
+					v[index] = nil
+				end
+			end
+		end
+
+		--Logic for setting bonuses go here
+		
+	end
+end
+
 function OnEaglelandStartTurn(id)
 	if not Players[id]:IsAlive() then return end
 
 	local eagleland = Players[id]
 	if IsEagleland(id) then
 		UpdateSuzerainStatus()
-	
+		
+		if not GLOBAL_NATURAL_WONDER_OWNERS[id] then GLOBAL_NATURAL_WONDER_OWNERS[id] = {} end
+
 		local numCities = eagleland:GetCities():GetCount()
 		print(numCities, #GLOBAL_EAGLELAND_SUZERAINS[id])
 		if numCities > GetTableLength(GLOBAL_EAGLELAND_SUZERAINS[id]) then
@@ -109,6 +138,7 @@ function InitGame()
 	TSL = ExposedMembers.GRAM_EAGLELAND
 	GLOBAL_EAGLELAND_SUZERAINS = TSL.ReadMyCustomData("GRAM_EAGLELAND_SUZERAINS") or {}
 	GLOBAL_FREE_CITY_STATES = TSL.ReadMyCustomData("GRAM_FREE_CITY_STATES") or {}
+	GLOBAL_NATURAL_WONDERS = TSL.ReadMyCustomData("GRAM_NATURAL_WONDERS") 
 
 
 	if TSL.ReadMyCustomData("GRAM_EAGLELAND_INIT") then 
