@@ -38,6 +38,9 @@
     <ArtDef Include="ArtDefs\Units.artdef">
       <SubType>Content</SubType>
     </ArtDef>
+    <Content Include="Core\Buildings.sql">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="Core\Civilization.sql">
       <SubType>Content</SubType>
     </Content>
