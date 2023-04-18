@@ -18,12 +18,6 @@ end
 ExposedMembers.GRAM_EAGLELAND.WriteMyCustomData = WriteMyCustomData
 ExposedMembers.GRAM_EAGLELAND.ReadMyCustomData = ReadMyCustomData
 
-function ChangeMyDiplomaticFavor(player, amount)
-	player:ChangeDiplomaticFavor(amount)
-end
-
-ExposedMembers.GRAM_EAGLELAND.ChangeMyDiplomaticFavor = ChangeMyDiplomaticFavor
-
 MAP_X, MAP_Y = Map.GetGridSize()
 
 local naturalWonders = {}
@@ -52,6 +46,7 @@ function MapSweep()
 	end
 end
 MapSweep()
+
 	
 WriteMyCustomData("GRAM_NATURAL_WONDERS", naturalWonderPlots)			
 

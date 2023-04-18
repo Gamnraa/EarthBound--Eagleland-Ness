@@ -9,6 +9,7 @@ GLOBAL_EAGLELAND_SUZERAINS = {}
 GLOBAL_FREE_CITY_STATES = {}
 GLOBAL_NATURAL_WONDERS = {}
 GLOBAL_NATURAL_WONDER_OWNERS = {}
+GLOBAL_NATURAL_WONDERS_FOUND = {}
 
 --GLOBAL_EAGLELAND = GameInfo.Civilizations["CIVILIZATION_GRAM_EAGLELAND"]
 function GetTableLength(t)
@@ -22,9 +23,12 @@ function GetTableLength(t)
 end
 
 
+
 function IsEagleland(id)
 	return PlayerConfigurations[id]:GetCivilizationTypeName() == "CIVILIZATION_GRAM_EAGLELAND"
 end
+
+
 
 function UpdateSuzerainStatus()
 	for _, i in pairs(PlayerManager.GetAliveMinorIDs()) do
@@ -52,6 +56,8 @@ function UpdateSuzerainStatus()
 	TSL.WriteMyCustomData("GRAM_FREE_CITY_STATES", GLOBAL_FREE_CITY_STATES)
 end
 
+
+
 function NaturalWondersOwnerCheck()
 	for _, plot in pairs(GLOBAL_NATURAL_WONDERS) do
 		local id = plot:GetOwner()
@@ -72,13 +78,25 @@ function NaturalWondersOwnerCheck()
 			end
 		end
 
+		for eaglelandId, _ in pairs (GLOBAL_NAUTRAL_WONDERS_FOUND) do
+			local playerVisibility = PlayerVisibilityManager.GetPlayerVisibility(eaglelandId)
+			if playerVisibility:IsVisible(index) and not GLOBAL_NATURAL_WONDERS_FOUND[eaglelandId][plot:GetFeatureType()] then
+				print("Natural Wonder found that did not fire event hook")
+				OnEaglelandDiscoverNaturalWonder(nil, nil, plot:GetFeatureType())
+			end
+		end
+
 		--Logic for setting bonuses go here
 		
 	end
 end
 
+
+
 function OnEaglelandStartTurn(id)
 	if not Players[id]:IsAlive() then return end
+
+	NaturalWondersOwnerCheck()
 
 	local eagleland = Players[id]
 	if IsEagleland(id) then
@@ -119,29 +137,36 @@ function OnEaglelandStartTurn(id)
 	end
 end
 
-function OnEaglelandDiscoverNaturalWonder()
+
+
+function OnEaglelandDiscoverNaturalWonder(x, y, featureType)
 	--Fun fact, I gave this no params because none pushed by the event are the player that discovered them
 	--I'll be real, no clue how we'll handle AI players finding natural wonders
 	--Thanks Firaxis
 	--Also fun fact if you start the game with a Natural Wonder in view
 	--This function will not trigger and you get no bonuses fuck you
-	print("Eagleland Natural Wonder")
+	print("Eagleland Natural Wonder found", featureType)
 	--My solution is just to make it so all Eagleland players get the bonus
-	--Since this will only call once for ever Wonder I believe
+	--Since this will only call once for every Wonder I believe
 	local bonus = math.floor(50 * GameInfo.GameSpeeds[GameConfiguration.GetGameSpeedType()].CostMultiplier / 100)
-	for i = 0, GameDefines.MAX_PLAYERS-3, 1 do
+	for i, _ in pairs(GLOBAL_EAGLELAND_SUZERAINS) do
 		if IsEagleland(i) and Players[i]:IsAlive() then
 			Players[i]:GetCulture():ChangeCurrentCulturalProgress(bonus)
 			Players[i]:AttachModifierByID("GRAM_NESS_GIVE_DIPLO_FAVOR")
+			GLOBAL_NATURAL_WONDERS_FOUND[i][featureType] = true
 		end
 	end
+	TSL.WriteMyCustomData("GRAM_NATURAL_WONDERS_FOUND", GLOBAL_NATURAL_WONDERS_FOUND)
 end
+
+
 							
 function InitGame()
 	TSL = ExposedMembers.GRAM_EAGLELAND
 	GLOBAL_EAGLELAND_SUZERAINS = TSL.ReadMyCustomData("GRAM_EAGLELAND_SUZERAINS") or {}
 	GLOBAL_FREE_CITY_STATES = TSL.ReadMyCustomData("GRAM_FREE_CITY_STATES") or {}
 	GLOBAL_NATURAL_WONDERS = TSL.ReadMyCustomData("GRAM_NATURAL_WONDERS") 
+	GLOBAL_NATURAL_WONDERS_FOUND = TSL.ReadMyCustomData("GRAM_NATURAL_WONDERS_FOUND") or {}
 
 
 	if TSL.ReadMyCustomData("GRAM_EAGLELAND_INIT") then 
@@ -177,6 +202,7 @@ function InitGame()
 	TSL.WriteMyCustomData("GRAM_FREE_CITY_STATES", GLOBAL_FREE_CITY_STATES)
 	TSL.WriteMyCustomData("GRAM_EAGLELAND_INIT", true)
 end
+
 
 
 if GetTableLength(GLOBAL_EAGLELAND_SUZERAINS) > 0 then
