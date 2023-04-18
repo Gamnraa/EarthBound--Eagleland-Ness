@@ -248,7 +248,7 @@
 			<Text>EarthBound</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_LEADER_GRAM_NESS_EARTHBOUND_DESC" Language="en_US">
-			<Text>Receive [ICON_FAVOR] Diplomatic Favor and [ICON_Culture] Culture when discovering a Natural Wonder. +2 [ICON_FAVOR] Diplomatic Favor per turn for every Natural Wonder under your control, +3[ICON_Strength] Combat Strength to Psychics for every 8th you control.</Text>
+			<Text>Receive [ICON_FAVOR] Diplomatic Favor and [ICON_Culture] Culture when discovering a Natural Wonder. +2 [ICON_FAVOR] Diplomatic Favor per turn for every Natural Wonder under your control, +3[ICON_Strength] Combat Strength to Psychics for every 8th in the world you control.</Text>
 		</Row>
 
 		<Row Tag="LOC_UNIT_GRAM_PSYCHIC_NAME" Language="en_US">

@@ -123,15 +123,18 @@ function OnEaglelandDiscoverNaturalWonder()
 	--Fun fact, I gave this no params because none pushed by the event are the player that discovered them
 	--I'll be real, no clue how we'll handle AI players finding natural wonders
 	--Thanks Firaxis
+	--Also fun fact if you start the game with a Natural Wonder in view
+	--This function will not trigger and you get no bonuses fuck you
 	print("Eagleland Natural Wonder")
-	local player = Players[Game.GetLocalPlayer()]
-	if not (player and IsEagleland(Game.GetLocalPlayer())) then return end
-	
+	--My solution is just to make it so all Eagleland players get the bonus
+	--Since this will only call once for ever Wonder I believe
 	local bonus = math.floor(50 * GameInfo.GameSpeeds[GameConfiguration.GetGameSpeedType()].CostMultiplier / 100)
-
-	player:GetCulture():ChangeCurrentCulturalProgress(bonus)
-	TSL.ChangeMyDiplomaticFavor(player, bonus)
-	
+	for i = 0, GameDefines.MAX_PLAYERS-3, 1 do
+		if IsEagleland(i) and Players[i]:IsAlive() then
+			Players[i]:GetCulture():ChangeCurrentCulturalProgress(bonus)
+			Players[i]:AttachModifierByID("GRAM_NESS_GIVE_DIPLO_FAVOR")
+		end
+	end
 end
 							
 function InitGame()
