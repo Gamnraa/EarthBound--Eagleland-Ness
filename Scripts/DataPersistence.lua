@@ -38,7 +38,7 @@ function MapSweep()
 				for k, _ in pairs(naturalWonders) do
 					if GameInfo.Features[k].Index == plot:GetFeatureType() then
 						print("Plot has a natural wonder, adding to list")
-						table.insert(naturalWonderPlots, plot)
+						table.insert(naturalWonderPlots, plot:GetIndex())
 					end
 				end
 			end
